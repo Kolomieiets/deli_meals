@@ -37,17 +37,18 @@ class MealItem extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(15.0),
-                    topLeft: Radius.circular(15.0),
-                  ),
-                  child: Image.network(
-                    imageUrl,
-                    height: 250,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(15.0),
+                      topLeft: Radius.circular(15.0),
+                    ),
+                    child: Image(
+                      height: 250,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        imageUrl,
+                      ),
+                    )),
                 MealTitle(title: title),
               ],
             ),
