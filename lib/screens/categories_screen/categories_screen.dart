@@ -1,5 +1,5 @@
-import 'package:deli_meals/widgets/category_item.dart';
-import 'package:deli_meals/dummy_data.dart';
+import 'package:deli_meals/screens/categories_screen/components/category_item.dart';
+import 'package:deli_meals/resources/dummy_data.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class CategotiesScreen extends StatelessWidget {
           crossAxisSpacing: 20.0,
           mainAxisSpacing: 20.0,
         ),
-        children: DUMMY_CATEGORIES
+        children: dummyCategories
             .map(
               (catData) => CategoryItem(
                 catData.id,

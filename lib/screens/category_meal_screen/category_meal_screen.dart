@@ -1,13 +1,12 @@
-import 'package:deli_meals/dummy_data.dart';
 import 'package:deli_meals/models/meal.dart';
-import 'package:deli_meals/widgets/meal_item.dart';
+import 'package:deli_meals/screens/category_meal_screen/components/meal_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryMealScreen extends StatefulWidget {
   static const String routeName = '/category_meals';
   final List<Meal> availableMeal;
 
-  CategoryMealScreen(this.availableMeal);
+  const CategoryMealScreen(this.availableMeal, {super.key});
 
   @override
   State<CategoryMealScreen> createState() => _CategoryMealScreenState();
@@ -59,8 +58,8 @@ class _CategoryMealScreenState extends State<CategoryMealScreen> {
               title: meals?.title ?? '',
               imageUrl: meals?.imageUrl ?? '',
               duration: meals?.duration ?? 0,
-              complexity: meals?.complexity ?? Complexity.Simple,
-              affordability: meals?.affordability ?? Affordability.Affordable,
+              complexity: meals?.complexity ?? Complexity.simple,
+              affordability: meals?.affordability ?? Affordability.affordable,
               id: meals?.id ?? '',
             );
           },

@@ -1,16 +1,16 @@
 import 'package:deli_meals/models/meal.dart';
-import 'package:deli_meals/widgets/meal_item.dart';
+import 'package:deli_meals/screens/category_meal_screen/components/meal_item.dart';
 import 'package:flutter/material.dart';
 
 class FavoritesScreen extends StatelessWidget {
-  List<Meal>? _favoriteMeals;
+  final List<Meal>? _favoriteMeals;
 
-  FavoritesScreen(this._favoriteMeals);
+  const FavoritesScreen(this._favoriteMeals, {super.key});
 
   @override
   Widget build(BuildContext context) {
     if (_favoriteMeals!.isEmpty) {
-      return Center(
+      return const Center(
           child: Text('You have no favorite now - start adding some!'));
     } else {
       return ListView.builder(
@@ -21,8 +21,8 @@ class FavoritesScreen extends StatelessWidget {
               title: meals?.title ?? '',
               imageUrl: meals?.imageUrl ?? '',
               duration: meals?.duration ?? 0,
-              complexity: meals?.complexity ?? Complexity.Simple,
-              affordability: meals?.affordability ?? Affordability.Affordable,
+              complexity: meals?.complexity ?? Complexity.simple,
+              affordability: meals?.affordability ?? Affordability.affordable,
               id: meals?.id ?? '',
             );
           },
